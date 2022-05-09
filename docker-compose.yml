@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+   banco:
+    image: mysql:5.7.38-oracle
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress123
+      MYSQL_USER: worpress
+      MYSQL_PASSWORD: apiki
+   wordpress:
+    image: php8  
+    volumes:
+      - ./wordpress:/var/www/html
+    ports:
+        - 80:80
